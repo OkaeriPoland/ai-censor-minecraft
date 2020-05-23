@@ -6,6 +6,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import static eu.okaeri.aicensor.minecraft.bukkit.CensorBukkitPlugin.PERM_BYPASS;
+
 public class AiCensorListener implements Listener {
 
     private final CensorBukkitPlugin plugin;
@@ -25,6 +27,10 @@ public class AiCensorListener implements Listener {
 
         Player player = event.getPlayer();
         String message = event.getMessage();
+
+        if (player.hasPermission(PERM_BYPASS)) {
+            return;
+        }
 
         if (!this.censor.shouldBeBlocked(message)) {
             return;
