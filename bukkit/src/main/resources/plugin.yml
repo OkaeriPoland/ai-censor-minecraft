@@ -1,0 +1,5 @@
+name: AiCensor
+version: ${project.version}-git-${git.commit.id.abbrev}
+main: eu.okaeri.aicensor.minecraft.bukkit.CensorBukkitPlugin
+description: 'OK! AI.Censor Bukkit Plugin'
+author: Daffit

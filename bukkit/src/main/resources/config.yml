@@ -1,0 +1,43 @@
+################################################################
+#                                                              #
+#    OK! AI.Censor Minecraft                                   #
+#                                                              #
+#    Nie wiesz jak skonfigurować? Zerknij do dokumentacji!     #
+#    https://manager.okaeri.eu/aicensor/docs                   #
+#                                                              #
+################################################################
+
+
+# Klucz prywatny API
+token: ""
+
+# Ustawienia sprawdzania
+check-chat: true
+
+# Wiadomosci
+message-prefix: "&f&lAI.Censor&7: "
+message-player-info: "{PREFIX}&cTwoja wiadomosc zawierala niedozwolone slowa i zostala zablokowana."
+message-admin-info: |-
+  {PREFIX}&cZablokowano wiadomosc!
+  &7- &cGracz: &e{0}
+  &7- &cTresc: &e{1}
+
+# Ustawienia komendy kary za wykroczenia.
+# Ustaw puste (''), aby wylaczyc.
+#
+# Zmienne:
+# {NAME} - nick gracza
+# {STEP} - patrz punishments-steps
+#
+# Przykladowe komendy:
+# Essentials/EssentialsX: mute {NAME} {STEP} zlamanie regulaminu
+#
+punishment-command: 'mute {NAME} {STEP} zlamanie regulaminu'
+
+# System zwiekszajacy kare za kazdym kolejnym wykroczeniem.
+# Licznik restartuje sie wraz z restartem serwera.
+punishment-steps:
+  1: '15m'
+  2: '30m'
+  3: '1h'
+  default: '6h'
